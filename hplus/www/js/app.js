@@ -4,6 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+$(document).ready(function(){
+    $("#ionicView").hide();
+});
 angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
@@ -22,6 +25,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
+.controller('loginCtrl', function($scope,$location) {
+    $scope.doLogin = function() {
+        if($scope.loginData.username == 'admin' && $scope.loginData.password == 'admin'){
+            console.log("logged in");
+            $("#ionicView").show();
+            $("#loginForm").hide();
+        }
+        else
+            console.log("Error");
+    }
+ })
+            
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
@@ -71,3 +86,4 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 });
+
