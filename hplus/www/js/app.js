@@ -6,7 +6,14 @@
 // 'starter.controllers' is found in controllers.js
 $(document).ready(function(){
     $("#ionicView").hide();
+    $("#signupForm").hide();
 });
+
+function showSignup(){
+    $("#loginForm").hide();
+    $("#signupButton").hide();
+    $("#signupForm").show();
+}
 angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
@@ -34,6 +41,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
         else
             console.log("Error");
+    }
+ })
+
+.controller('loginCtrl', function($scope,$location) {
+    $scope.doSignup = function() {
+        console.log($scope.signupData.name);
+        $("#ionicView").show();
+        $("#signupForm").hide();
+        
     }
  })
             
