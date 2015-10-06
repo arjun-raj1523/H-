@@ -52,12 +52,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
    
     $scope.doLogin = function() {
+        
         /*
         
         Code to get data from DB and check valid user
         
         */
-        if($scope.loginData.username == 'admin' && $scope.loginData.password == 'admin'){
+        //Change User to DB value
+        
+        if($scope.loginData.username.toLowerCase() == 'admin' && $scope.loginData.password == 'admin'){
             console.log("logged in");
             $("#ionicView").show();
             $("#loginForm").hide();
@@ -70,7 +73,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         // Display Error message
             console.log("Error");
     }
+    
     $scope.doSignup = function() {
+        /*
+        
+        Do Validation of Data
+        
+        */
         
         /*
         
@@ -79,11 +88,32 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         */
         
         
-        console.log($scope.signupData.name);
-        $("#ionicView").show();
-        $("#signupForm").hide();
+        //login after Signup method
+        loginAfterSignup($scope.signupData.username,$scope.signupData.password);
         
         
+    }
+    
+    function loginAfterSignup(username,password){
+        
+        /*
+        
+        Code to get data from DB and check valid user
+        
+        */
+        //Change User to DB value
+        if(username.toLowerCase() == 'user' && password == 'user'){
+            $("#ionicView").show();
+            $("#loginForm").hide();
+            $("#signupButton").hide();
+            $("#signupForm").hide();
+            
+            
+        }
+        else
+        // Display Error message
+            console.log("Error");
+    
     }
 
 
