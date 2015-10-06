@@ -32,26 +32,63 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
+//Controller for Login and Sign up.
 .controller('loginCtrl', function($scope,$location) {
+        
+    $scope.doLogout = function() {
+            $("#loginForm").show();
+            $("#ionicView").hide();
+            $("#signupForm").hide();
+            $("#signupButton").show();
+            $("#signupButton").show();
+            $("#loginUsername").val("");
+            $("#loginPassword").val("");
+            $("#signupPassword").val("");
+            $("#signupPasswordCheck").val("");
+            $("#signupName").val("");
+            $("#signupUsername").val("");
+            
+        
+    }
+   
     $scope.doLogin = function() {
+        /*
+        
+        Code to get data from DB and check valid user
+        
+        */
         if($scope.loginData.username == 'admin' && $scope.loginData.password == 'admin'){
             console.log("logged in");
             $("#ionicView").show();
             $("#loginForm").hide();
+            $("#signupButton").hide();
+            $("#signupForm").hide();
+            
+            
         }
         else
+        // Display Error message
             console.log("Error");
     }
- })
-
-.controller('loginCtrl', function($scope,$location) {
     $scope.doSignup = function() {
+        
+        /*
+        
+        Code to Insert data into DB
+        
+        */
+        
+        
         console.log($scope.signupData.name);
         $("#ionicView").show();
         $("#signupForm").hide();
         
+        
     }
+
+
  })
+
             
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

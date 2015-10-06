@@ -30,12 +30,12 @@
         <form id="loginForm">
             <div class="list">
                 <label class="item item-input">
-                    <span class="input-label">Username</span>
-                    <input type="text" ng-model="loginData.username">
+                    
+                    <input type="text" placeholder="Username" id="loginUsername" ng-model="loginData.username">
                 </label>
                 <label class="item item-input">
-                    <span class="input-label">Password</span>
-                    <input type="password" ng-model="loginData.password">
+                    
+                    <input type="password" placeholder="Password" id="loginPassword" ng-model="loginData.password">
                 </label>
                 <label class="item">
                     <button ng-click="doLogin()" class="button button-block button-positive" type="submit">Log in</button>
@@ -48,16 +48,16 @@
             <form id="signupForm">
                 <div class="list">
                     <label class="item item-input">
-                        <input type="text" placeholder="Name" ng-model="signupData.name">
+                        <input type="text" placeholder="Name" id="signupName" ng-model="signupData.name">
                     </label>
                     <label class="item item-input">
-                        <input type="text" placeholder="Username(Your Hawk ID) " ng-model="signupData.username">
+                        <input type="text" placeholder="Username(Your Hawk ID) " id="signupUsername" ng-model="signupData.username">
                     </label>
                     <label class="item item-input">
-                        <input type="password" placeholder="Password" ng-model="signupData.password">
+                        <input type="password" placeholder="Password" id="signupPassword" ng-model="signupData.password">
                     </label>
                     <label class="item item-input">
-                        <input type="password" placeholder="Re-Enter Password" ng-model="signupData.passwordCheck">
+                        <input type="password" placeholder="Re-Enter Password" id="signupPasswordCheck" ng-model="signupData.passwordCheck">
                     </label>
                     <label class="item">
                         <button ng-click="doSignup()" class="button button-block button-positive" type="submit">Sign up</button>
@@ -65,7 +65,7 @@
                 </div>
             </form>
         </div>
-      <div id="ionicView">
+      <div id="ionicView" >
     <ion-nav-view></ion-nav-view>
       </div>
   </body>
