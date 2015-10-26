@@ -7,6 +7,7 @@
 $(document).ready(function(){
     $("#ionicView").hide();
     $("#signupForm").hide();
+    $(".alert").hide();
 });
 
 function showSignup(){
@@ -33,7 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 })
 
 //Controller for Login and Sign up.
-.controller('loginCtrl', function($scope,$location) {
+.controller('loginCtrl', function($scope,$location,$ionicPopup,$timeout) {
         
     $scope.doLogout = function() {
             $("#loginForm").show();
@@ -47,6 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             $("#signupPasswordCheck").val("");
             $("#signupName").val("");
             $("#signupUsername").val("");
+            $(".alert").hide();
             
         
     }
@@ -69,9 +71,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             
             
         }
-        else
+        else{
         // Display Error message
-            console.log("Error");
+            $(".alert").show();
+            $scope.errMsg = "Error: User name and Password Do not Match";
+            showPopup("loginErr");
+
+          }
     }
     
     $scope.doSignup = function() {
@@ -115,6 +121,21 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             console.log("Error");
     
     }
+
+function showPopup(parameter){
+
+// An alert dialog
+ if(parameter = "loginErr"){
+   var alertPopup = $ionicPopup.alert({
+     title: 'Error',
+     template: 'The User ID and Password Do not Match Try Again'
+
+   });
+ }
+
+ 
+
+}
 
 
  })

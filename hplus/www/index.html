@@ -9,6 +9,9 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- BootStrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -19,8 +22,12 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+ 
+
     <!-- your app's js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+       <!-- BootStrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
   </head>
@@ -28,6 +35,9 @@
   <body ng-app="starter">
       <div ng-controller="loginCtrl">
         <form id="loginForm">
+            <div class="alert alert-danger">
+                {{errMsg}}
+            </div>
             <div class="list">
                 <label class="item item-input">
                     
@@ -44,8 +54,11 @@
         </form>
     </div>
       <button id="signupButton" onclick="showSignup()"  class="button button-block button-positive"> Not yet Regsitered, Sign Up</button>
+
+      
         <div ng-controller="loginCtrl">
             <form id="signupForm">
+
                 <div class="list">
                     <label class="item item-input">
                         <input type="text" placeholder="Name" id="signupName" ng-model="signupData.name">
