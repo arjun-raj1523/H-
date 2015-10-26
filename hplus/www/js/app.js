@@ -68,7 +68,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             $("#loginForm").hide();
             $("#signupButton").hide();
             $("#signupForm").hide();
-            
+            $scope.loginData.username="";
+            $scope.loginData.password="";
             
         }
         else{
@@ -113,7 +114,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             $("#loginForm").hide();
             $("#signupButton").hide();
             $("#signupForm").hide();
-            
+            username="";
+            password="";
             
         }
         else
@@ -151,8 +153,8 @@ function showPopup(parameter){
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.refresh', {
+    url: '/refresh',
     views: {
       'menuContent': {
         templateUrl: 'templates/search.html'
@@ -160,8 +162,8 @@ function showPopup(parameter){
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.accInfo', {
+      url: '/accInfo',
       views: {
         'menuContent': {
           templateUrl: 'templates/browse.html'
