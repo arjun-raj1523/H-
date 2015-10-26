@@ -27,12 +27,13 @@ angular.module('starter.controllers', [])
   // Open the login modal
   $scope.login = function() {
     $scope.modal.show();
+
   };
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
-
+    console.log("Works");
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     $timeout(function() {
@@ -40,7 +41,6 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
-
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
